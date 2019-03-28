@@ -123,7 +123,7 @@ REST_FRAMEWORK = {
 AUTH_USER_MODEL = 'api.User'
 
 # SECURITY WARNING: don't use AlwaysRootBackend in production
-AUTHENTICATION_BACKENDS = ['server.auth.AlwaysRootBackend']
+#AUTHENTICATION_BACKENDS = ['server.auth.AlwaysRootBackend']
 
 # Django allauth (account registration email flow)
 # http://django-allauth.readthedocs.io/en/latest/configuration.html
