@@ -41,7 +41,7 @@ const redirectLogout = (to, from, next) => {
 
 Vue.use(Router);
 
-export default new Router({
+let router = new Router({
   mode: 'history',
   saveScrollPosition: true,
   routes: [
@@ -90,3 +90,9 @@ export default new Router({
     },
   ],
 });
+
+router.beforeEach((to, from, next) => {
+    store.dispatch('auth/initialize').then(()=>next())
+})
+
+export default router
