@@ -42,6 +42,7 @@ const redirectLogout = (to, from, next) => {
 Vue.use(Router);
 
 export default new Router({
+  mode:'history',
   saveScrollPosition: true,
   routes: [
     {
