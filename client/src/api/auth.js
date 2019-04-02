@@ -10,8 +10,8 @@ export default {
   createAccount(username, password1, password2, email) {
     return session.post('/auth/registration/', { username, password1, password2, email });
   },
-  changeAccountPassword(password1, password2) {
-    return session.post('/auth/password/change/', { password1, password2 });
+  changeAccountPassword(new_password1, new_password2) {
+    return session.post('/auth/password/change/', { new_password1, new_password2 });
   },
   sendAccountPasswordResetEmail(email) {
     return session.post('/auth/password/reset/', { email });
