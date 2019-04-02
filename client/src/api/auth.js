@@ -8,7 +8,7 @@ export default {
     return session.post('/auth/logout/', {});
   },
   createAccount(username, password1, password2, email) {
-    return session.post('/registration/', { username, password1, password2, email });
+    return session.post('/auth/registration/', { username, password1, password2, email });
   },
   changeAccountPassword(password1, password2) {
     return session.post('/auth/password/change/', { password1, password2 });
@@ -26,6 +26,6 @@ export default {
     return session.patch('/auth/user/', data);
   },
   verifyAccountEmail(key) {
-    return session.post('/registration/verify-email/', { key });
+    return session.post('/auth/registration/verify-email/', { key });
   },
 };
