@@ -80,6 +80,7 @@ const mutations = {
   [LOGOUT](state) {
     state.authenticating = false;
     state.error = false;
+    state.profile = {};
   },
   [SET_TOKEN](state, token) {
     localStorage.setItem(TOKEN_STORAGE_KEY, token);
