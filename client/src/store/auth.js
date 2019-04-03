@@ -18,13 +18,7 @@ const initialState = {
   authenticating: false,
   error: false,
   token: null,
-  profile: {
-    pk: null,
-    first: null,
-    last: null,
-    email: null,
-    username: null,
-  }
+  profile: {}, //pk, first_name, last_name, email, username
 };
 
 const getters = {
