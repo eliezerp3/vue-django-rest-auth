@@ -8,5 +8,6 @@ urlpatterns = [
     path('auth/', include('rest_auth.urls')),
     path('auth/registration/', include('rest_auth.registration.urls')),
     path('admin/', admin.site.urls),
-    url(r'^.*$', TemplateView.as_view(template_name="index.html"), name='index'),
+    url(r'^$', TemplateView.as_view(template_name="index.html"), name='index'),
+    #Prod: url(r'^.*$', TemplateView.as_view(template_name="index.html"), name='index'),
 ]
