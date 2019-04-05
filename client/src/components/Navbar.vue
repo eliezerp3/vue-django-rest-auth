@@ -1,13 +1,30 @@
 <template>
   <ul class="navbar" id="navbar">
-    <li><router-link to="/logout">logout</router-link></li>
-    <li><router-link to="/about">about</router-link></li>
+    <li v-for='link in links'><router-link :to="link.link">{{link.name}}</router-link></li>
   </ul>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
   name: 'navbar',
+  data(){
+    return {
+      auth_links: [{link:'/logout',name:'logout'},{link:'/about',name:'about'}],
+      non_auth_links:[{link:'/login',name:'login'},{link:'/register',name:'register'},{link:'/password_reset',name:'password reset'}],
+    }
+  },
+  computed: {
+    ...mapGetters('auth', [
+      'isAuthenticated',
+    ]),
+    links(){
+      if(this.isAuthenticated)
+        return this.auth_links
+      else
+        return this.non_auth_links
+    }
+  }
 };
 </script>
 
